@@ -1,6 +1,6 @@
 package com.mycompany.roadwatch;
 
-public class Admin extends Pengguna {
+public class Admin extends Petugas {
     public Admin(String idPengguna, String nama, String username, String password){
         super(idPengguna, nama, username, password);
     }
