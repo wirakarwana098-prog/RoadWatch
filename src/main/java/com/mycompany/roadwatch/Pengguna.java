@@ -52,6 +52,10 @@ public class Pengguna {
             this.password = password;
         }
     }
+    
+    public boolean login(String user, String pass) {
+        return this.username.equals(user) && this.password.equals(pass);
+    }
       
     public void tampilkanMenu() {
         System.out.println("=== MENU PENGGUNA ===");
