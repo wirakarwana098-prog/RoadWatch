@@ -33,7 +33,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class App extends Application {
+public class AppUI extends Application {
 
     private SistemRoadWatch sistem = new SistemRoadWatch();
     private Dashboard dashboard = new Dashboard(sistem);
