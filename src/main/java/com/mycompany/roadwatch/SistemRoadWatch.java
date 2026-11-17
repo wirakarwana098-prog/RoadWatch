@@ -19,6 +19,16 @@ public class SistemRoadWatch {
         tambahLaporan("Jl. Soekarno-Hatta", "Rajabasa", "berat", "lubang1.jpg");
         tambahLaporan("Jl. ZA Pagar Alam", "Kedaton", "sedang", "lubang2.jpg");
         tambahLaporan("Jl. Teuku Umar", "Kedaton", "ringan", "lubang3.jpg");
+        tambahLaporan("Jl. Imam Bonjol", "Tanjung Karang Pusat", "berat", "lubang4.jpg");
+        tambahLaporan("Jl. Kartini", "Tanjung Karang Pusat", "ringan", "lubang5.jpg");
+        tambahLaporan("Jl. Diponegoro", "Enggal", "sedang", "lubang6.jpg");
+        tambahLaporan("Jl. Pangeran Antasari", "Kedaton", "berat", "lubang7.jpg");
+        tambahLaporan("Jl. Soekarno-Hatta", "Rajabasa", "berat", "lubang8.jpg");
+        tambahLaporan("Jl. Soekarno-Hatta", "Rajabasa", "berat", "lubang9.jpg");
+        cariLaporanByKode("RW-0004").setStatus("Terverifikasi");
+        cariLaporanByKode("RW-0005").setStatus("Selesai");
+        cariLaporanByKode("RW-0006").setStatus("Dalam Penanganan");
+        cariLaporanByKode("RW-0007").setStatus("Ditolak");
     }
 
     private String buatKodeLaporan() {
@@ -144,5 +154,19 @@ public class SistemRoadWatch {
 
     public ArrayList<Pengguna> getDaftarPengguna() {
         return daftarPengguna;
+    }
+    
+        public boolean hapusPetugas(String username) {
+        for (int i = 0; i < daftarPengguna.size(); i++) {
+            Pengguna p = daftarPengguna.get(i);
+            if (p.getUsername().equals(username)) {
+                if (p instanceof Admin) {
+                    return false;
+                }
+                daftarPengguna.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 }
